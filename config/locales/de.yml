@@ -1,0 +1,49 @@
+de:
+  activerecord:
+    models:
+      ecm/courses/course_category:
+        one: Kurskategorie
+        other: Kurskategorien
+      ecm/courses/course_date:
+        one: Termin
+        other: Termine
+      ecm/courses/course:
+        one: Kurs
+        other: Kurse
+    attributes:
+      ecm/courses/course_category:
+        description: Beschreibung
+        courses_count: Kurse
+        courses: Kurse
+        locale: Sprache
+        name: Name
+        parent_id: Überliegende Kategorie
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      ecm/courses/course_date:
+        description: Beschreibung
+        course_id: Kurs
+        end_at: Endet am
+        start_at: Beginnt am
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+      ecm/courses/course:
+        description: Beschreibung
+        course_category_id: Kategorie
+        course_dates_count: Termine
+        locale: Sprache
+        name: Name
+        created_at: Erstellt am
+        updated_at: Aktualisiert am
+  date:
+    formats:
+      month_with_year: '%B %Y'
+  ecm:
+    courses:
+      course_categories:
+        show:
+          calendar_heading: 'Kurskalender für %{month}'
+  routes:
+    courses: 'kurse'
+    course_categories: 'kurs-kategorien'
+    course_dates: 'kurs-termine'
