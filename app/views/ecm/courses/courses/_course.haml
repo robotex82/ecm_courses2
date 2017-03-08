@@ -1,8 +1,8 @@
 .course{:id => "course-#{course.to_param}"}
-  %h2= course.heading_name
+  %span.course-title
+    %h1= course.heading_name
   - unless course.description.blank?
     .course-description
       %p= course.description
   .course-dates
     = render course.course_dates
-%hr/

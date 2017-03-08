@@ -2,3 +2,7 @@
 log/*.log
 pkg/
 *.gem
+
+spec/dummy/log/*
+spec/dummy/tmp/*
+spec/dummy/db/*.sqlite3

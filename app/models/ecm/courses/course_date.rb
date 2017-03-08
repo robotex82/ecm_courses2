@@ -6,20 +6,13 @@ module Ecm::Courses
     has_one :course_category,
             through: :course
 
-    # # attributes
-    # attr_accessible :description,
-    #                 :ecm_courses_course_id,
-    #                 :end_at,
-    #                 #                 :slug,
-    #                 :start_at
-
     # callbacks
     after_initialize :set_defaults, if: :new_record?
 
     # validations
-    validates :ecm_courses_course, presence: true
-    validates :end_at,             presence: true
-    validates :start_at,           presence: true
+    validates :course,   presence: true
+    validates :end_at,   presence: true
+    validates :start_at, presence: true
 
     def self.for_month(date)
       date ||= Time.zone.now.to_date

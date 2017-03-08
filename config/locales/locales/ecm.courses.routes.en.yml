@@ -1,6 +1,6 @@
 en:
   resources:
-    ecm_courses_courses: "courses"
-    ecm_courses_course_categories: "course-categories"
-    ecm_courses_course_dates: "course-dates"
+    courses: "courses"
+    course_categories: "course-categories"
+    course_dates: "course-dates"
 

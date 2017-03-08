@@ -1,3 +1,25 @@
 = Ecm::Courses
 
+== Installation
+
+Add it to your gemfile and bundle:
+
+    # Gemfile
+    gem 'ecm_courses2'
+
+    # console
+    bundle
+
+Add migrations and migrate:
+
+    # console
+    rake ecm_courses:install:migrations && rake db:migrate
+
+Install:
+
+    # console
+    rails g ecm:courses:install
+
+== License
+
 This project rocks and uses MIT-LICENSE.

@@ -3,14 +3,21 @@
     %h1.courses_category-name= course_category.name
   - else
     %h2.courses_category-name= course_category.name
+
+  - if action_name == 'show'
+    .course-calendar.bottom-margin-4
+      = month_calendar_pagination(date)
+      = month_calendar date, course_dates, display_method: :course, start_day: :monday
+
   .course_categories-tree
     = nested_li(course_category.descendants, {}) do |course_category, level|
       = link_to course_category.tree_name, course_category
   - unless course_category.description.blank?
     .course_categories-description
       %p= course_category.description
+
   .course_category-courses
-    %h2= Ecm::Courses::CourseCategory.human_attribute_name(:courses)
+    / %h2= Ecm::Courses::CourseCategory.human_attribute_name(:courses)
     - if course_category.courses_count == 0
       = t('ecm.courses.course_category.messages.no_courses_available')
       %hr/

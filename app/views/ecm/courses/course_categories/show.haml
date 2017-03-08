@@ -1,12 +1,13 @@
-= render @course_category
+= render partial: 'course_category', locals: { course_category: @course_category, date: @date, course_dates: @course_dates }
+
+.course_category-calendar{ id: "course_category-#{@course_category.to_param}" }
+  - if @course_category.courses.any?
+    / %h2= t('.calendar_heading', month: l(@date, format: :month_with_year))
+    / = month_calendar_pagination(@date)
+    / = month_calendar @date, @course_dates, display_method: :course, start_day: :monday
+
 %p
   - if @course_category.root?
     = link_to(t('ecm.courses.course_category.actions.back_to_index'), course_categories_path) if respond_to?(:course_categories_path)
   - else
     = link_to(Ecm::Courses::CourseCategory.human_attribute_name(:parent), @course_category.parent)
-.course_category-calendar{ id: "course_category-#{@course_category.to_param}" }
-  - if @course_category.courses.any?
-    %h2
-      = t('.calendar_heading', month: l(@date, format: :month_with_year))
-    = month_calendar_pagination(@date)
-    = month_calendar @date, @course_dates, display_method: :course, start_day: :monday

@@ -1,7 +1,7 @@
 module Ecm::Courses
   class Course < ApplicationRecord
     # acts as list
-    acts_as_list scope: :category
+    acts_as_list scope: :course_category
 
     # associations
     belongs_to :course_category
@@ -9,15 +9,12 @@ module Ecm::Courses
     has_many :course_dates, ->() { order(:start_at) },
              dependent: :destroy
 
-    # # attibutes
-    # attr_accessible :description,
-    #                 :ecm_courses_course_category_id,
-    #                 :locale,
-    #                 :name
-
     # friendly id
     extend FriendlyId
     friendly_id :name, use: [:slugged]
+
+    # scopes
+    default_scope { includes(:course_category).order('ecm_courses_course_categories.name, ecm_courses_courses.position ASC') }
 
     # validations
     validates :course_category, presence: true
@@ -25,8 +22,9 @@ module Ecm::Courses
     validates :name, presence: true
 
     def heading_name
-      locale_prefix = locale.blank? ? '' : "[#{locale}] "
-      "#{locale_prefix}#{name}"
+      # locale_prefix = locale.blank? ? '' : "[#{locale}] "
+      # "#{locale_prefix}#{name}"
+      name
     end
 
     def to_s
