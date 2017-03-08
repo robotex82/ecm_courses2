@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ecm_courses2 (0.0.1)
+    ecm_courses2 (0.1.0)
       acts_as_list
       awesome_nested_set
       awesome_nested_set-tools

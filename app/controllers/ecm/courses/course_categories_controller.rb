@@ -19,6 +19,11 @@ module Ecm::Courses
       @course_dates = @courses.reduce([]) { |cd, c| cd << c.course_dates.for_month(@date).all }.flatten
     end
 
+    def ical
+      @resource = load_resource
+      send_data @resource.to_icalendar.to_ical, type: 'text/calendar' # , disposition: 'inline'
+    end
+
     private
 
     def resource_class

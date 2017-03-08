@@ -1,5 +1,21 @@
 module Ecm::Courses
   class Course < ApplicationRecord
+    module Icalendar
+      def to_icalendar_events(calendar)
+        course_dates.map do |cd|
+          calendar.event do |e|
+            e.dtstart     = cd.start_at
+            e.dtend       = cd.end_at
+            e.summary     = name
+            e.description = description
+            # e.ip_class    = "PRIVATE"
+          end
+        end
+      end
+    end
+
+    include Icalendar
+
     # acts as list
     acts_as_list scope: :course_category
 

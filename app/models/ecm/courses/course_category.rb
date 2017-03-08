@@ -1,5 +1,15 @@
 module Ecm::Courses
   class CourseCategory < ApplicationRecord
+    module Icalendar
+      def to_icalendar
+        calendar = ::Icalendar::Calendar.new
+        courses.map { |c| c.to_icalendar_events(calendar) }
+        calendar
+      end
+    end
+
+    include Icalendar
+
     # associations
     has_many :courses, ->() { order(:position) },
              dependent: :destroy

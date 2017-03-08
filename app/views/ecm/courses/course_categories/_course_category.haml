@@ -5,9 +5,13 @@
     %h2.courses_category-name= course_category.name
 
   - if action_name == 'show'
-    .course-calendar.bottom-margin-4
+    .course-calendar.bottom-margin-2
       = month_calendar_pagination(date)
       = month_calendar date, course_dates, display_method: :course, start_day: :monday
+    .bottom-margin-4 
+      = link_to(ical_course_category_path(course_category), class: 'btn btn-default') do
+        %span.glyphicon.glyphicon-calendar
+        = ical_course_category_url(course_category)
 
   .course_categories-tree
     = nested_li(course_category.descendants, {}) do |course_category, level|
