@@ -1,7 +1,10 @@
-.course{ id: "course_#{@course.to_param}" }
+.course.bottom-margin-2{ id: "course_#{@course.to_param}" }
   %h1= link_to @course.course_category, @course.course_category
   %h2= @course
   .course-description
     = @course.description
   .course-dates
     = render @course.course_dates
+
+= link_to(@course.course_category) do
+  = t('.back')

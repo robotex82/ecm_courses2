@@ -40,9 +40,23 @@ de:
       month_with_year: '%B %Y'
   ecm:
     courses:
+      courses:
+        show:
+          back: 'Zurück'
       course_categories:
+        index:
+          back: 'Zurück'
         show:
           calendar_heading: 'Kurskalender für %{month}'
+      course_dates:
+        show:
+          back: Zurück
+      course_category:
+        actions:
+          back_to_index: 'Zurück'
+      pages:
+        course_categories:
+          index: Kurskategorien
   routes:
     courses: 'kurse'
     course_categories: 'kurs-kategorien'

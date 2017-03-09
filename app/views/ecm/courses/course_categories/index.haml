@@ -2,3 +2,6 @@
 .course_categories-tree
   = nested_li(@course_categories, {}) do |course_category, level|
     = link_to course_category.tree_name, course_category
+
+= link_to(main_app.root_path) do
+  = t('.back')

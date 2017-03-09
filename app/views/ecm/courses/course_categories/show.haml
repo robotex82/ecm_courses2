@@ -1,3 +1,4 @@
+- content_for(:title) { @course_category.name }
 = render partial: 'course_category', locals: { course_category: @course_category, date: @date, course_dates: @course_dates }
 
 .course_category-calendar{ id: "course_category-#{@course_category.to_param}" }
