@@ -9,7 +9,7 @@
       = month_calendar_pagination(date)
       = month_calendar date, course_dates, display_method: :course, start_day: :monday
     .bottom-margin-4 
-      = link_to(url_for(format: :ics), class: 'btn btn-default') do
+      = link_to(url_for(format: :ics, nocache: true), class: 'btn btn-default') do
         %span.glyphicon.glyphicon-calendar
         = url_for(format: :ics)
 
