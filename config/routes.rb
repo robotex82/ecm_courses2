@@ -1,8 +1,6 @@
 Ecm::Courses::Engine.routes.draw do
   localized do
-    resources :course_categories, only: [:index, :show] do
-      get :ical, on: :member
-    end
+    resources :course_categories, only: [:index, :show]
     resources :courses, only: [:show] do
       member do
         get "calendar", action: :calendar
