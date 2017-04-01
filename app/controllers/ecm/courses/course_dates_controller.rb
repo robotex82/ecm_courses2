@@ -1,5 +1,5 @@
 module Ecm::Courses
-  class CourseDatesController < ApplicationController
+  class CourseDatesController < Ecm::Courses::ApplicationController
     def index
       @course_dates = CourseDate.includes(course: [ :course_category ]).all
     end

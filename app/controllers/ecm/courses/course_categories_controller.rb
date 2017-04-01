@@ -1,5 +1,5 @@
 module Ecm::Courses
-  class CourseCategoriesController < ApplicationController
+  class CourseCategoriesController < Ecm::Courses::ApplicationController
     def self.resource_class
       CourseCategory
     end
