@@ -1,6 +1,2 @@
   
-  
-  # ECM Courses Frontend Routing
-  localized do
-    mount Ecm::Courses::Engine, at: '/courses'
-  end
+  mount Ecm::Courses::Engine, at: '/'
