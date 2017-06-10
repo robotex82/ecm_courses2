@@ -1,4 +1,4 @@
-class CreateEcmCoursesCourseCategories < ActiveRecord::Migration
+class CreateEcmCoursesCourseCategories < ActiveRecord::Migration[4.2]
   def change
     create_table :ecm_courses_course_categories do |t|
       t.string :name

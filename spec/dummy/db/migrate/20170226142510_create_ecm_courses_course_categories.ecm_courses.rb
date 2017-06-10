@@ -1,5 +1,5 @@
 # This migration comes from ecm_courses (originally 1)
-class CreateEcmCoursesCourseCategories < ActiveRecord::Migration
+class CreateEcmCoursesCourseCategories < ActiveRecord::Migration[4.2]
   def change
     create_table :ecm_courses_course_categories do |t|
       t.string :name

@@ -30,7 +30,8 @@ module Ecm::Courses
     friendly_id :name, use: [:slugged]
 
     # scopes
-    default_scope { includes(:course_category).order('ecm_courses_course_categories.name, ecm_courses_courses.position ASC') }
+    # @todo check ordering
+    # default_scope { includes(:course_category).order('ecm_courses_course_categories.name, ecm_courses_courses.position ASC') }
 
     # validations
     validates :course_category, presence: true

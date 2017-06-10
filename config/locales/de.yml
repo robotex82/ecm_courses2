@@ -58,7 +58,7 @@ de:
         course_categories:
           index: Kurskategorien
   routes:
-    ecm_courses: 'kurse'
+    ecm_courses_engine: 'kurse'
     courses: 'kurse'
     course_categories: 'kategorien'
     course_dates: 'termine'
