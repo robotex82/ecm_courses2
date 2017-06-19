@@ -10,7 +10,6 @@ module Ecm::Courses
     after_initialize :set_defaults, if: :new_record?
 
     # validations
-    validates :course,   presence: true
     validates :end_at,   presence: true
     validates :start_at, presence: true
 
