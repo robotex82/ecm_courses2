@@ -22,6 +22,7 @@ de:
         updated_at: Aktualisiert am
       ecm/courses/course_date:
         description: Beschreibung
+        course: Kurs
         course_id: Kurs
         end_at: Endet am
         start_at: Beginnt am
