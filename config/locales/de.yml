@@ -17,6 +17,7 @@ de:
         courses: Kurse
         locale: Sprache
         name: Name
+        parent: Überliegende Kategorie
         parent_id: Überliegende Kategorie
         created_at: Erstellt am
         updated_at: Aktualisiert am
@@ -30,6 +31,7 @@ de:
         updated_at: Aktualisiert am
       ecm/courses/course:
         description: Beschreibung
+        course_category: Kategorie
         course_category_id: Kategorie
         course_dates_count: Termine
         locale: Sprache
