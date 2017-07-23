@@ -6,6 +6,7 @@ require 'route_translator'
 require 'icalendar'
 require 'haml-rails'
 require 'ecm_calendar_helper'
+require 'validates_timeliness'
 
 require 'ecm/courses'
 require 'ecm/courses/engine'

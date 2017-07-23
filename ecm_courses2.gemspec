@@ -25,6 +25,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'icalendar'
   s.add_dependency 'haml-rails'
   s.add_dependency 'ecm_calendar_helper', '>= 0.0.1'
+  s.add_dependency 'validates_timeliness'
 
   s.add_development_dependency 'rspec-rails'
   s.add_development_dependency 'guard-rails'

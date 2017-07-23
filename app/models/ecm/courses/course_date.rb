@@ -13,6 +13,8 @@ module Ecm::Courses
     validates :end_at,   presence: true
     validates :start_at, presence: true
 
+    validates :end_at, timeliness: { after: :start_at }
+
     def self.for_month(date)
       date ||= Time.zone.now.to_date
       where(start_at: (date.beginning_of_month..(date.end_of_month + 1.day)))
