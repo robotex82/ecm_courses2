@@ -24,6 +24,7 @@ module Ecm::Courses
         before_validation :calculate_free_seats
 
         validates :used_seats, numericality: { greater_than_or_equal_to: 0 }
+        validates :free_seats, numericality: { greater_than_or_equal_to: 0 }
       end
 
       def free_seats_percentage
