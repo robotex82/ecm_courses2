@@ -16,6 +16,47 @@ module Ecm::Courses
 
     include Icalendar
 
+    module Seats
+      extend ActiveSupport::Concern
+
+      included do
+        after_initialize :set_seats_defaults, if: :new_record?
+        before_validation :calculate_free_seats
+
+        validates :used_seats, numericality: { greater_than_or_equal_to: 0 }
+      end
+
+      def free_seats_percentage
+        percentage = free_seats.to_f / seats.to_f * 100
+        percentage.nan? ? 0 : percentage
+      end
+
+      def free_seats_level
+        Ecm::Courses::Configuration.free_seats_level_for(self)
+      end
+
+      def free_seats_level_properties
+        free_seats_level.values.first
+      end
+
+      def free_seats_level_range
+        free_seats_level.keys.first
+      end
+   
+      private
+
+      def set_seats_defaults
+        self.seats      ||= 0
+        self.free_seats ||= 0
+      end
+
+      def calculate_free_seats
+        self.free_seats = seats - used_seats
+      end
+    end
+
+    include Seats
+
     # acts as list
     acts_as_list scope: :course_category
 

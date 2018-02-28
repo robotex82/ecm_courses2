@@ -6,8 +6,8 @@ module Ecm
 
         source_root File.expand_path('../templates', __FILE__) 
         
-        def generate_intializer
-          copy_file "ecm_courses.rb", "config/initializers/ecm_courses.rb"
+        def generate_initializer
+          copy_file "initializer.rb", "config/initializers/ecm_courses.rb"
         end   
 
         def generate_routes
