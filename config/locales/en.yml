@@ -1,0 +1,86 @@
+en:
+  activerecord:
+    models:
+      ecm/courses/course_category:
+        one: "course category"
+        other: "course_categories"
+      ecm/courses/course:
+        one: "Course"
+        other: "Courses"
+      ecm/courses/course_date:
+        one: "course date"
+        other: "course dates"
+    attributes:
+      ecm/courses/course_category:
+        children: sub categories
+        created_at: Created at
+        courses: Courses
+        courses_count: Courses
+        created_at: created at
+        depth: depth
+        description: description
+        lft: left
+        locale: language
+        name: name
+        parent: parent category
+        parent_id: parent cateogory
+        position: position
+        rgt: right
+        slug: friendly id
+        updated_at: updated at
+      ecm/courses/course_date:
+        created_at: created at
+        description: description
+        duration_in_minutes: duration
+        course_category: course category
+        course: course
+        course_id: course
+        end_at: end at
+        name: name
+        start_at: begin at
+        updated_at: updated at
+      ecm/courses/course:
+        course_category: category
+        course_category_id: category
+        course_dates: dates
+        course_dates_count: dates
+        created_at: created at
+        description: description
+        free_seats: Free seats
+        locale: language
+        name: name
+        position: position
+        seats: Seats
+        slug: friendly id
+        updated_at: updated at
+        used_seats: used seats
+  date:
+    formats:
+      month_with_year: '%B %Y'
+  ecm:
+    courses:
+      courses:
+        show:
+          back: 'Back'
+      course_categories:
+        free_seats:
+          greater_than: "> %{percentage}"
+          less_than: "< %{percentage}"
+        index:
+          back: 'Back'
+        show:
+          calendar_heading: 'Calendar for %{month}'
+      course_dates:
+        show:
+          back: Back
+      course_category:
+        actions:
+          back_to_index: 'Back'
+      pages:
+        course_categories:
+          index: Course categories
+  routes:
+    ecm_courses_engine: 'courses'
+    courses: 'courses'
+    course_categories: 'categories'
+    course_dates: 'dates'

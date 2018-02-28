@@ -12,32 +12,48 @@ de:
         other: Kurse
     attributes:
       ecm/courses/course_category:
-        description: Beschreibung
-        courses_count: Kurse
+        children: Unterkategorien
+        created_at: Erstellt am
         courses: Kurse
+        courses_count: Kurse
+        created_at: Erstellt am
+        depth: Level
+        description: Beschreibung
+        lft: Links
         locale: Sprache
         name: Name
         parent: Überliegende Kategorie
         parent_id: Überliegende Kategorie
-        created_at: Erstellt am
+        position: Position
+        rgt: Rechts
+        slug: Freundliche ID
         updated_at: Aktualisiert am
       ecm/courses/course_date:
+        created_at: Erstellt am
         description: Beschreibung
+        duration_in_minutes: Dauer
+        course_category: Kategorie
         course: Kurs
         course_id: Kurs
         end_at: Endet am
+        name: Name
         start_at: Beginnt am
-        created_at: Erstellt am
         updated_at: Aktualisiert am
       ecm/courses/course:
-        description: Beschreibung
         course_category: Kategorie
         course_category_id: Kategorie
+        course_dates: Termine
         course_dates_count: Termine
+        created_at: Erstellt am
+        description: Beschreibung
+        free_seats: Freie Plätze
         locale: Sprache
         name: Name
-        created_at: Erstellt am
+        position: Position
+        seats: Plätze
+        slug: Freundliche ID
         updated_at: Aktualisiert am
+        used_seats: Belegte Plätze
   date:
     formats:
       month_with_year: '%B %Y'
@@ -47,6 +63,9 @@ de:
         show:
           back: 'Zurück'
       course_categories:
+        free_seats:
+          greater_than: "> %{percentage}"
+          less_than: "< %{percentage}"
         index:
           back: 'Zurück'
         show:

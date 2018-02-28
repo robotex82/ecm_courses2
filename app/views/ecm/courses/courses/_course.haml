@@ -1,6 +1,9 @@
 .course{:id => "course-#{course.to_param}"}
   %span.course-title
     %h1= course.heading_name
+  - if Ecm::Courses::Configuration.show_free_places
+    .free-seats.bottom-margin-1
+      = free_places_label_for(course)
   - unless course.description.blank?
     .course-description
       %p= course.description
