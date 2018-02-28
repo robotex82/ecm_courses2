@@ -2,8 +2,8 @@
 %span{ class: "label label-#{course.free_seats_level_properties[:css_class]}" }
   - if course.free_seats_level_range.last == 100
     - percentage = number_to_percentage(course.free_seats_level_range.first, precision: 0)
-    = t('.less_than', percentage: percentage)
+    = t('.greater_than', percentage: percentage)
 
   - else 
     - percentage = number_to_percentage(course.free_seats_level_range.last, precision: 0)
-    = t('.greater_than', percentage: percentage)
+    = t('.less_than', percentage: percentage)
