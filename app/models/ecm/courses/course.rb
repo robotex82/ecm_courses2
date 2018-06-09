@@ -49,6 +49,7 @@ module Ecm::Courses
       def set_seats_defaults
         self.seats      ||= 0
         self.free_seats ||= 0
+        self.used_seats ||= 0
       end
 
       def calculate_free_seats
